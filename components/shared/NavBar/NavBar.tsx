@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useState } from "react";
 import { IComponentProps } from "../../../base/interfaces/interface";
 import { cn } from "../../../lib/utils";
+import TwoMenuIcon from "../../Icons/TwoMenu";
 import MainContainer from "../Container";
 import Logo from "../Logo";
 import { MobileNavLinks } from "./MobileNavLinks/MobileNavLinks";
@@ -36,92 +36,90 @@ const NavBar = ({ className }: IComponentProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <div className='relative'>
-      <div className={cn("padding-all sticky z-50 top-0 w-full", className)}>
-        <MainContainer className='flex items-center py-4 lg:py-6 justify-between'>
+    <div className="relative">
+      <div className={cn("padding-all sticky top-0 z-50 w-full", className)}>
+        <MainContainer className="flex items-center justify-between py-4 lg:py-6">
           {/*logo  */}
           <Logo />
 
           {/* Navbar Links */}
-          <nav className='lg:flex items-center space-x-5 hidden text-lg text-muted-foreground'>
-            <Link href={"/"} className=''>
+          <nav className="hidden items-center space-x-5 text-lg text-muted-foreground lg:flex">
+            <Link href={"/"} className="">
               Work
             </Link>
 
-            <div className='w-8 h-0.5 bg-muted-foreground'></div>
+            <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className=''>
+            <Link href={"/"} className="">
               About
             </Link>
 
-            <div className='w-8 h-0.5 bg-muted-foreground'></div>
+            <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className=''>
+            <Link href={"/"} className="">
               Blog
             </Link>
 
-            <div className='w-8 h-0.5 bg-muted-foreground'></div>
+            <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className=''>
+            <Link href={"/"} className="">
               Contact
             </Link>
           </nav>
 
-          <div className='flex items-center space-x-5 lg:space-x-10'>
+          <div className="flex items-center space-x-5 lg:space-x-10">
             {/* theme switcher */}
 
             {theme === "dark" ? (
-              <MoonIcon className='cursor-pointer' onClick={() => setTheme("light")} />
+              <MoonIcon
+                className="cursor-pointer"
+                onClick={() => setTheme("light")}
+              />
             ) : (
-              <SunIcon className='cursor-pointer' onClick={() => setTheme("dark")} />
+              <SunIcon
+                className="cursor-pointer"
+                onClick={() => setTheme("dark")}
+              />
             )}
 
             {/* the social links */}
-            <div className='lg:flex hidden items-center space-x-10'>
+            <div className="hidden items-center space-x-10 lg:flex">
               <a
-                href='https://www.github.com/kingsley-sunny'
-                className='py-1 border-b border-b-muted-foreground'
-                target='_blank'
+                href="https://www.github.com/kingsley-sunny"
+                className="border-b border-b-muted-foreground py-1"
+                target="_blank"
               >
                 Github
               </a>
               <a
-                href='https://www.x.com/ezeobi_sunny'
-                className='py-1 border-b border-b-muted-foreground'
-                target='_blank'
+                href="https://www.x.com/ezeobi_sunny"
+                className="border-b border-b-muted-foreground py-1"
+                target="_blank"
               >
                 Twitter
               </a>
             </div>
 
             {/* ham burger menu */}
-            <motion.button
+            <button
               onClick={() => setIsMenuOpen(true)}
-              className='w-10 h-10 bg-secondary-100 flex items-center justify-center rounded-full lg:hidden'
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-greenColor lg:hidden"
             >
-              {/* <TwoMenuIcon className='text-primary-muted-foreground' /> */}
-            </motion.button>
+              <TwoMenuIcon className="text-white/80" />
+            </button>
           </div>
         </MainContainer>
 
         {/* Mobile Menu Links */}
-        <AnimatePresence mode='wait'>
-          {isMenuOpen && (
-            <motion.button
-              initial={{ clipPath: "circle(20px at 0px 0px)", opacity: 1 }}
-              animate={{ clipPath: "circle(120dvh at 0px 0px)", opacity: 1 }}
-              exit={{ clipPath: "circle(30px at 0px 0px)", opacity: 1 }}
-              transition={{ duration: 0.7 }}
-              onClick={() => setIsMenuOpen(false)}
-              className='w-9 h-9 absolute top-1/2 right-0 bg-greenColor rounded-full lg:hidden'
-            >
-              <MobileNavLinks isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-            </motion.button>
-          )}
-        </AnimatePresence>
+        {isMenuOpen && (
+          <MobileNavLinks
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+          />
+        )}
       </div>
 
-      <div className='bg-secondary-50 absolute -top-48 -left-48 lg:-top-36 lg:-left-36 rounded-full w-96 h-96 lg:w-[30rem] lg:h-[30rem] z-0 '></div>
+      <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div>
     </div>
   );
 };
