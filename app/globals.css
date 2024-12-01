@@ -29,6 +29,8 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --greenColor: 155 26% 36%;
+    --secondary100: 213 13% 13%;
+    --secondary50: 191 13% 25%;
   }
   .dark {
     --background: 212 13% 24%;
@@ -56,6 +58,8 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --greenColor: 155 26% 36%;
+    --secondary100: 213 13% 13%;
+    --secondary50: 191 13% 25%;
   }
 }
 @layer base {
@@ -71,4 +75,12 @@
   .padding-all {
     @apply px-4 md:px-8;
   }
+}
+
+.scrollbar-thumb {
+  display: none !important;
+}
+
+.scrollbar-track {
+  display: none !important;
 }

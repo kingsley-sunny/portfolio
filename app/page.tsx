@@ -1,7 +1,18 @@
 export default function Home() {
   return (
-    <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-      This is a fucking message
+    <div className='flex items-center justify-center scrollbar-thin'>
+      <div className='grid gap-6'>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+        <div className='w-60 h-96 bg-primary border-2'></div>
+      </div>
     </div>
   );
 }
