@@ -45,7 +45,7 @@ const Banner = () => {
         </div>
       </MainContainer>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pb-8 xl:pb-12">
         <button className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-muted-foreground">
           <ArrowDownIcon className="h-12 w-8" />
         </button>

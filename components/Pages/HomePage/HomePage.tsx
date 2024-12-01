@@ -1,10 +1,11 @@
+import { About } from "./About/About";
 import Banner from "./Banner/Banner";
 
 const HomePage = () => {
   return (
     <div>
       <Banner />
-      <Banner />
+      <About />
       <Banner />
       <Banner />
       <Banner />
