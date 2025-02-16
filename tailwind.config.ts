@@ -6,6 +6,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./base/data/*.{ts,js,tsx,jsx}",
   ],
   theme: {
     extend: {
@@ -58,11 +59,18 @@ export default {
         greenColor: {
           DEFAULT: "hsl(var(--greenColor))",
         },
+        grayColor: {
+          DEFAULT: "hsl(var(--grayColor))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        oswald: ["var(--font-oswald)"],
+        lexend: ["var(--font-lexend)"],
       },
     },
   },

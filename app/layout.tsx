@@ -1,6 +1,6 @@
 "use client";
 
-import { Lexend } from "next/font/google";
+import { Lexend, Oswald } from "next/font/google";
 import { Scrollbar } from "smooth-scrollbar-react";
 import { OverscrollEffect } from "smooth-scrollbar/plugins/overscroll";
 import NavBar from "../components/shared/NavBar/NavBar";
@@ -13,16 +13,22 @@ const lexend = Lexend({
   subsets: ["latin"],
 });
 
+const oswald = Oswald({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <ThemeProvider attribute='class' defaultTheme='dark'>
+    <html lang="en" suppressHydrationWarning>
+      <ThemeProvider attribute="class" defaultTheme="dark">
         <body
-          className={`${lexend.className} text-foreground fixed max-h-[100dvh] overflow-y-hidden w-full !scrollbar-thin`}
+          className={`${lexend.variable} ${oswald.variable} font-lexend fixed max-h-[100dvh] w-full overflow-y-hidden text-foreground !scrollbar-thin`}
         >
           <NavBar />
           <Scrollbar
@@ -37,7 +43,7 @@ export default function RootLayout({
               },
             }}
           >
-            <div className='h-[100dvh] w-full scrollbar-thin'>{children}</div>
+            <div className="h-[100dvh] w-full scrollbar-thin">{children}</div>
           </Scrollbar>
         </body>
       </ThemeProvider>
