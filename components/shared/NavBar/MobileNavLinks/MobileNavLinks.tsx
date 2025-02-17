@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import MainContainer from "../../Container";
 import Logo from "../../Logo";
@@ -11,58 +12,105 @@ export const MobileNavLinks = ({
 }) => {
   return (
     <>
-      <button
-        className='fixed inset-0 bg-black/80 z-0'
-        onClick={() => setIsMenuOpen(false)}
-      ></button>
-      <div className='h-[100dvh] w-2/3 fixed z-50 top-0 bg-secondary-100 inset-0 padding-all text-white/80'>
-        <MainContainer className='relative z-10'>
-          <div className='py-6 border-b border-muted-foreground'>
-            <Logo />
-          </div>
+      <AnimatePresence mode="wait">
+        {isMenuOpen && (
+          <motion.button
+            key={"backdrop"}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 0.4 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-0 bg-black/50 backdrop-blur-md"
+            onClick={() => setIsMenuOpen(false)}
+          ></motion.button>
+        )}
+      </AnimatePresence>
 
-          {/* the links */}
-          <div className='py-8 border-b border-muted-foreground'>
-            <Link href={"/"} className='uppercase py-3 font-light block text-xl'>
-              Home
-            </Link>
+      <AnimatePresence mode="wait">
+        {isMenuOpen && (
+          <motion.div
+            key={"menuItems"}
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            exit={{ x: "-100%" }}
+            transition={{ ease: [0.4, 0, 0.2, 1], duration: 0.4 }}
+            className="padding-all fixed inset-0 top-0 z-50 h-[100dvh] w-2/3 bg-secondary-100 text-white/80"
+          >
+            <MainContainer className="relative z-10">
+              <div className="border-b border-muted-foreground py-6">
+                <Logo />
+              </div>
 
-            <Link href={"/"} className='uppercase py-3 font-light block text-xl'>
-              Work
-            </Link>
+              {/* the links */}
+              <div className="border-b border-muted-foreground py-8">
+                <Link
+                  href={"/"}
+                  className="block py-3 text-xl font-light uppercase"
+                >
+                  Home
+                </Link>
 
-            <Link href={"/"} className='uppercase py-3 font-light block text-xl'>
-              About
-            </Link>
+                <Link
+                  href={"/"}
+                  className="block py-3 text-xl font-light uppercase"
+                >
+                  Work
+                </Link>
 
-            <Link href={"/"} className='uppercase py-3 font-light block text-xl'>
-              Blog
-            </Link>
+                <Link
+                  href={"/"}
+                  className="block py-3 text-xl font-light uppercase"
+                >
+                  About
+                </Link>
 
-            <Link href={"/"} className='uppercase py-3 font-light block text-xl'>
-              Contact
-            </Link>
-          </div>
+                <Link
+                  href={"/"}
+                  className="block py-3 text-xl font-light uppercase"
+                >
+                  Blog
+                </Link>
 
-          <div className='py-8'>
-            <p className='text-sm font-light uppercase text-muted-foreground'>Socials</p>
+                <Link
+                  href={"/"}
+                  className="block py-3 text-xl font-light uppercase"
+                >
+                  Contact
+                </Link>
+              </div>
 
-            <div className='mt-4 space-y-4'>
-              <a href='' className='font-extralight underline text-lg block'>
-                Linkedin
-              </a>
+              <div className="py-8">
+                <p className="text-sm font-light uppercase text-muted-foreground">
+                  Socials
+                </p>
 
-              <a href='' className='font-extralight underline text-lg block'>
-                Twitter
-              </a>
+                <div className="mt-4 space-y-4">
+                  <a
+                    href=""
+                    className="block text-lg font-extralight underline"
+                  >
+                    Linkedin
+                  </a>
 
-              <a href='' className='font-extralight underline text-lg block'>
-                Github
-              </a>
-            </div>
-          </div>
-        </MainContainer>
-      </div>
+                  <a
+                    href=""
+                    className="block text-lg font-extralight underline"
+                  >
+                    Twitter
+                  </a>
+
+                  <a
+                    href=""
+                    className="block text-lg font-extralight underline"
+                  >
+                    Github
+                  </a>
+                </div>
+              </div>
+            </MainContainer>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
