@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <ThemeProvider attribute="class" defaultTheme="dark">
         <body
-          className={`${lexend.variable} ${oswald.variable} font-lexend fixed max-h-[100dvh] w-full overflow-y-hidden text-foreground !scrollbar-thin`}
+          className={`${lexend.variable} ${oswald.variable} fixed max-h-[100dvh] w-full overflow-y-hidden font-lexend text-foreground transition duration-500 ease-in-out !scrollbar-thin`}
         >
           <NavBar />
           <Scrollbar

@@ -13,8 +13,7 @@ export const HelpingCompanies = () => {
               <Image
                 src={portraitImg}
                 fill
-                className="h-full w-full"
-                objectFit="cover"
+                className="h-full w-full object-cover"
                 alt="Profile picture"
               />
               <div className="absolute inset-0 h-full w-full bg-black/40"></div>

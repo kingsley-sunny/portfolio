@@ -29,7 +29,7 @@ const Banner = () => {
             alt="Thumbnail"
           />
 
-          <div className="absolute -right-32 bottom-0 z-0 h-64 w-64 rounded-full bg-secondary-50 lg:-right-48 lg:bottom-32 lg:h-96 lg:w-96"></div>
+          <div className="absolute -right-32 bottom-0 z-0 h-64 w-64 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-right-48 lg:bottom-32 lg:h-96 lg:w-96"></div>
 
           <div className="">
             <p className="relative z-10 ml-auto mt-8 text-right text-4xl uppercase xl:text-[6.5rem] xl:leading-[1]">

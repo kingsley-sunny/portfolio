@@ -22,7 +22,7 @@ export const ProjectCard = ({
         )}
       >
         <div className="relative h-full w-full">
-          <Image src={img} alt={name} fill objectFit="contain" />
+          <Image src={img} alt={name} fill style={{ objectFit: "contain" }} />
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export const ProjectCard = ({
         <h2 className="border-b border-b-foreground/50 py-4 text-4xl lg:text-6xl">
           {name}
         </h2>
-        <div className="font-lexend mt-2 flex items-center justify-between text-sm uppercase text-foreground/70 lg:mt-4 lg:text-base">
+        <div className="mt-2 flex items-center justify-between font-lexend text-sm uppercase text-foreground/70 lg:mt-4 lg:text-base">
           <p className="">{category}</p>
           <p className="flex items-center gap-2">
             <p className="h-[0.4px] w-6 bg-foreground"></p>

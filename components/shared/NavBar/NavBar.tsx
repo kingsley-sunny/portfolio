@@ -119,7 +119,7 @@ const NavBar = ({ className }: IComponentProps) => {
         )}
       </div>
 
-      <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div>
+      <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div>
     </div>
   );
 };
