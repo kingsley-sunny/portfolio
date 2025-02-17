@@ -33,6 +33,7 @@
     --secondary50: 191 13% 95%;
     --foreground200: 0 2% 92%;
     --grayColor: 212 7% 38%;
+    --blueGray: 215 15% 25%;
   }
   .dark {
     --background: 212 13% 24%;
@@ -64,6 +65,7 @@
     --secondary50: 191 13% 25%;
     --foreground200: 212 15% 25%;
     --grayColor: 212 7% 38%;
+    --blueGray: 212 15% 25%;
   }
 }
 @layer base {

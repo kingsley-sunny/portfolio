@@ -62,6 +62,7 @@ export default {
         grayColor: {
           DEFAULT: "hsl(var(--grayColor))",
         },
+        blueGray: "hsl(var(--blueGray))",
       },
       borderRadius: {
         lg: "var(--radius)",
