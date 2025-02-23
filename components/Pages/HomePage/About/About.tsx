@@ -3,7 +3,7 @@ import MainContainer from "../../../shared/Container";
 
 export const About = () => {
   return (
-    <div className="padding-all bg-foreground-200 py-12 lg:py-32">
+    <div className="padding-all bg-foreground-200 py-12 transition duration-100 lg:py-32">
       <MainContainer className="grid gap-16 lg:grid-cols-3">
         <div className="col-span-2">
           <h2 className="text-2xl leading-[1.5] lg:text-4xl lg:leading-[1.3]">

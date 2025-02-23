@@ -1,5 +1,6 @@
 import { About } from "./About/About";
 import Banner from "./Banner/Banner";
+import { BlogSection } from "./BlogSection/BlogSection";
 import { HelpingCompanies } from "./HelpingCompanies/HelpingCompanies";
 import { SelectedWorks } from "./SelectedWorks/SelectedWorks";
 
@@ -10,8 +11,7 @@ const HomePage = () => {
       <About />
       <SelectedWorks />
       <HelpingCompanies />
-      <Banner />
-      <Banner />
+      <BlogSection />
     </div>
   );
 };
