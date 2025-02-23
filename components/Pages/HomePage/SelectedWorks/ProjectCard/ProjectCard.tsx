@@ -34,7 +34,7 @@ export const ProjectCard = ({
         <div className="mt-2 flex items-center justify-between font-lexend text-sm uppercase text-foreground/70 lg:mt-4 lg:text-base">
           <p className="">{category}</p>
           <p className="flex items-center gap-2">
-            <p className="h-[0.4px] w-6 bg-foreground"></p>
+            <span className="block h-[0.4px] w-6 bg-foreground"></span>
             {year}
           </p>
         </div>

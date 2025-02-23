@@ -50,7 +50,7 @@ const NavBar = ({ className }: IComponentProps) => {
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link href={"/about"} className="">
               About
             </Link>
 

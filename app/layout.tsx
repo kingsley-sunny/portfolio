@@ -32,7 +32,7 @@ export default function RootLayout({
         >
           <NavBar />
           <Scrollbar
-            damping={0.05}
+            damping={0.07}
             thumbMinSize={0}
             renderByPixels={false}
             alwaysShowTracks={false}
