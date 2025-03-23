@@ -36,7 +36,7 @@ const NavBar = ({ className }: IComponentProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <div className="relative">
+    <div className="sticky top-0 z-40 w-full">
       <div className={cn("padding-all sticky top-0 z-50 w-full", className)}>
         <MainContainer className="flex items-center justify-between py-4 lg:py-6">
           {/*logo  */}
@@ -115,7 +115,7 @@ const NavBar = ({ className }: IComponentProps) => {
         <MobileNavLinks isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
 
-      <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div>
+      {/* <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div> */}
     </div>
   );
 };
