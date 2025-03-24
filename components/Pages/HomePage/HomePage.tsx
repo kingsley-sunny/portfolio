@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { About } from "./About/About";
 import Banner from "./Banner/Banner";
 import { BlogSection } from "./BlogSection/BlogSection";
@@ -23,25 +23,14 @@ const HomePage = () => {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
-
-  
-
   return (
-    <div
-      id="home-page"
-      className={`transform transition-all duration-500 ease-in-out`}
-      style={
-        {
-          // transform: `translateY(${scrollY * 0.2}px)`,
-        }
-      }
-    >
+    <>
       <Banner />
       <About />
       <SelectedWorks />
       <HelpingCompanies />
       <BlogSection />
-    </div>
+    </>
   );
 };
 
