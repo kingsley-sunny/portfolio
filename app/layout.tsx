@@ -1,8 +1,10 @@
 "use client";
 
+import { ViewTransitions } from "next-view-transitions";
 import { Lexend, Oswald } from "next/font/google";
 import NavBar from "../components/shared/NavBar/NavBar";
 import { ThemeProvider } from "../components/shared/ThemeProvider";
+
 import "./globals.css";
 
 const lexend = Lexend({
@@ -23,13 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${lexend.variable} ${oswald.variable} font-lexend text-foreground transition duration-300 ease-in-out scrollbar-thin`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <NavBar />
-          {/* <Scrollbar
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${lexend.variable} ${oswald.variable} font-lexend text-foreground transition duration-300 ease-in-out scrollbar-thin`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <NavBar />
+            {/* <Scrollbar
             damping={0.07}
             thumbMinSize={0}
             renderByPixels={false}
@@ -41,11 +44,12 @@ export default function RootLayout({
               },
             }}
           > */}
-          <div className="w-full border-white">{children}</div>
+            <div className="w-full border-white">{children}</div>
 
-          {/* </Scrollbar> */}
-        </ThemeProvider>
-      </body>
-    </html>
+            {/* </Scrollbar> */}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

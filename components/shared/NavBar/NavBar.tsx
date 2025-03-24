@@ -2,7 +2,7 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
+import { Link, useTransitionRouter } from "next-view-transitions";
 import { useState } from "react";
 import { IComponentProps } from "../../../base/interfaces/interface";
 import { cn } from "../../../lib/utils";
@@ -34,6 +34,7 @@ const sidebar = {
 const NavBar = ({ className }: IComponentProps) => {
   const { setTheme, theme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const {} = useTransitionRouter();
 
   return (
     <div className="sticky top-0 z-40 w-full">
@@ -44,25 +45,25 @@ const NavBar = ({ className }: IComponentProps) => {
 
           {/* Navbar Links */}
           <nav className="hidden items-center space-x-5 text-lg text-muted-foreground lg:flex">
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/"} className="">
               Work
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/about"} className="">
+            <Link translate="yes" href={"/about"} className="">
               About
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/"} className="">
               Blog
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/"} className="">
               Contact
             </Link>
           </nav>
