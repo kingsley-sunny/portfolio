@@ -1,11 +1,13 @@
-import { About } from "../HomePage/About/About";
-import Banner from "../HomePage/Banner/Banner";
+import { AboutPageBanner } from "./AboutPageBanner/AboutPageBanner";
+import { ServicesSection } from "./ServicesSection/ServicesSection";
+import { TestimonialSection } from "./TestimonialSection/TestimonialSection";
 
 export const AboutPage = () => {
   return (
     <>
-      <About />
-      <Banner></Banner>
+      <AboutPageBanner />
+      <ServicesSection />
+      <TestimonialSection />
     </>
   );
 };
