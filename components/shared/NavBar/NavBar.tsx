@@ -63,7 +63,7 @@ const NavBar = ({ className }: IComponentProps) => {
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link translate="yes" href={"/"} className="">
+            <Link translate="yes" href={"/contact"} className="">
               Contact
             </Link>
           </nav>

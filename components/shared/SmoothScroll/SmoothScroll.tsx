@@ -10,7 +10,7 @@ interface SmoothScrollProps {
 
 export const SmoothScroll: React.FC<SmoothScrollProps> = ({
   children,
-  damping = 0.1, // Default value if not provided
+  damping = 0.2, // Default value if not provided
 }) => {
   // DOM references
   const scrollable = useRef<HTMLDivElement>(null);

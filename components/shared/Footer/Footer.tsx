@@ -8,7 +8,7 @@ export const Footer = () => {
       <MainContainer>
         <div className="grid lg:grid-cols-10">
           <div className="relative lg:col-span-6">
-            <div className="absolute -left-20 -top-10 z-0 h-44 w-44 rounded-full bg-secondary-50 transition-all duration-100 lg:-left-10 lg:-top-20 lg:h-80 lg:w-80"></div>
+            <div className="absolute -left-20 -top-10 z-0 h-44 w-44 rounded-full bg-secondary-50 transition-all duration-300 lg:-left-10 lg:-top-20 lg:h-80 lg:w-80"></div>
 
             <p className="relative font-extralight uppercase lg:text-xl">
               FRONT END/BACKEND/DEVOPS/MOBILE DEV
@@ -34,7 +34,7 @@ export const Footer = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute -bottom-0 -right-10 z-0 h-24 w-24 rounded-full bg-secondary-50 transition-all duration-100 dark:bg-secondary-50 lg:-bottom-20 lg:-right-20 lg:h-44 lg:w-44"></div>
+              <div className="absolute -bottom-0 -right-10 z-0 h-24 w-24 rounded-full bg-secondary-50 transition-all duration-300 dark:bg-secondary-50 lg:-bottom-20 lg:-right-20 lg:h-44 lg:w-44"></div>
 
               <h3 className="mb-2 text-xl font-light lg:mb-4">SOCIALS</h3>
               <div className="relative">
