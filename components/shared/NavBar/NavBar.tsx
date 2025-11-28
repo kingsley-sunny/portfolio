@@ -2,7 +2,7 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
+import { Link, useTransitionRouter } from "next-view-transitions";
 import { useState } from "react";
 import { IComponentProps } from "../../../base/interfaces/interface";
 import { cn } from "../../../lib/utils";
@@ -34,9 +34,10 @@ const sidebar = {
 const NavBar = ({ className }: IComponentProps) => {
   const { setTheme, theme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const {} = useTransitionRouter();
 
   return (
-    <div className="relative">
+    <div className="sticky top-0 z-40 w-full">
       <div className={cn("padding-all sticky top-0 z-50 w-full", className)}>
         <MainContainer className="flex items-center justify-between py-4 lg:py-6">
           {/*logo  */}
@@ -44,25 +45,25 @@ const NavBar = ({ className }: IComponentProps) => {
 
           {/* Navbar Links */}
           <nav className="hidden items-center space-x-5 text-lg text-muted-foreground lg:flex">
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/"} className="">
               Work
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/about"} className="">
               About
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/"} className="">
               Blog
             </Link>
 
             <div className="h-0.5 w-8 bg-muted-foreground"></div>
 
-            <Link href={"/"} className="">
+            <Link translate="yes" href={"/contact"} className="">
               Contact
             </Link>
           </nav>
@@ -115,7 +116,7 @@ const NavBar = ({ className }: IComponentProps) => {
         <MobileNavLinks isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
 
-      <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div>
+      {/* <div className="absolute -left-48 -top-48 z-0 h-96 w-96 rounded-full bg-secondary-50 transition duration-500 ease-in-out lg:-left-36 lg:-top-36 lg:h-[30rem] lg:w-[30rem]"></div> */}
     </div>
   );
 };

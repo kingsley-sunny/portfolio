@@ -1,10 +1,11 @@
 "use client";
 
+import { ViewTransitions } from "next-view-transitions";
 import { Lexend, Oswald } from "next/font/google";
-import { Scrollbar } from "smooth-scrollbar-react";
-import { OverscrollEffect } from "smooth-scrollbar/plugins/overscroll";
 import NavBar from "../components/shared/NavBar/NavBar";
 import { ThemeProvider } from "../components/shared/ThemeProvider";
+
+import { ScrollToTopButton } from "../components/shared/ScrollToTopButton";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -25,28 +26,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <ThemeProvider attribute="class" defaultTheme="dark">
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
         <body
-          className={`${lexend.variable} ${oswald.variable} fixed max-h-[100dvh] w-full overflow-y-hidden font-lexend text-foreground transition duration-500 ease-in-out !scrollbar-thin`}
+          className={`${lexend.variable} ${oswald.variable} relative font-lexend text-foreground transition duration-300 ease-in-out scrollbar-thin`}
         >
-          <NavBar />
-          <Scrollbar
-            damping={0.05}
-            thumbMinSize={0}
-            renderByPixels={false}
-            alwaysShowTracks={false}
-            continuousScrolling={false}
-            plugins={{
-              overscroll: {
-                effect: OverscrollEffect.BOUNCE,
-              },
-            }}
-          >
-            <div className="h-[100dvh] w-full scrollbar-thin">{children}</div>
-          </Scrollbar>
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <NavBar />
+            <div className="relative w-full border-white">{children}</div>
+          </ThemeProvider>
+
+          <ScrollToTopButton />
         </body>
-      </ThemeProvider>
-    </html>
+      </html>
+    </ViewTransitions>
   );
 }

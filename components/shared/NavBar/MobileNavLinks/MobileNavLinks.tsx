@@ -58,7 +58,7 @@ export const MobileNavLinks = ({
                 </Link>
 
                 <Link
-                  href={"/"}
+                  href={"/about"}
                   className="block py-3 text-xl font-light uppercase"
                 >
                   About
@@ -72,7 +72,7 @@ export const MobileNavLinks = ({
                 </Link>
 
                 <Link
-                  href={"/"}
+                  href={"/contact"}
                   className="block py-3 text-xl font-light uppercase"
                 >
                   Contact
